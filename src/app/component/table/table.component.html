@@ -1,0 +1,61 @@
+<div class="row invoice">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title mb-3 big-font">Invoice</h1>
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless border-0 border-b-2 brc-default-l1">
+                        <thead class="bg-none bgc-default-tp1">
+                            <tr class="text-white">
+                                <th>#</th>
+                                <th>Invoice No</th>
+                                <th>Sell to Customer Name</th>
+                                <th>Sell to Address</th>
+                                <th>Sell to City</th>
+                                <th>Order Date</th>
+                                <th>Posting Date</th>
+                                <th>Amount</th>
+                                <th>Amount Including VAT</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let tr of productData; index as i'>
+                                <td>
+                                    {{ i+1 }}
+                                </td>
+                                <td>
+                                    <a (click)="viewInvoice(tr.No)" class="cursor-pointer">{{tr.No}}</a>
+                                </td>
+                                <td>
+                                    {{tr.Sell_to_Customer_Name}}
+                                </td>
+                                <td>
+                                    {{tr.Sell_to_Address}}
+                                </td>
+                                <td>
+                                    {{tr.Sell_to_City}}
+                                </td>
+                                <td>
+                                    {{tr.Order_Date}}
+                                </td>
+                                <td>
+                                    {{tr.Posting_Date}}
+                                </td>
+                                <td>
+                                    ${{tr.Amount | number: '1.2-2'}}
+                                </td>
+                                <td>
+                                    ${{tr.Amount_Including_VAT | number: '1.2-2'}}
+                                </td>
+                                <td class="text-center">
+                                    <i class="bi bi-eye-fill font-20 cursor-pointer" (click)="viewInvoice(tr.No)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

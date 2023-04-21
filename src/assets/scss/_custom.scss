@@ -1,0 +1,338 @@
+/* Font family Roboto-Bold */
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../fonts/Lato/Lato-Bold.woff') format('woff'),
+        url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../fonts/Lato/Lato-Regular.woff') format('woff'),
+        url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Medium';
+    src: url('../fonts/Lato/Lato-Medium.woff') format('woff'),
+        url('../fonts/Lato/Lato-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Semibold';
+    src: url('../fonts/Lato/Lato-Semibold.woff') format('woff'),
+        url('../fonts/Lato/Lato-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lato-bold {
+    font-family: 'Lato-Bold' !important;
+}
+
+.lato-medium {
+    font-family: 'Lato-Medium' !important;
+}
+
+.lato-regular {
+    font-family: 'Lato-Regular' !important;
+}
+
+.lato-semibold {
+    font-family: 'Lato-Semibold' !important;
+}
+
+body.auth-page {
+    height: 100%;
+    background: #006EAB;
+    min-height: 100vh;
+}
+
+.h-100-vh {
+    min-height: 100vh;
+}
+
+.login-card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 15%);
+    border-radius: 5.5px;
+    padding: 35px;
+    max-width: 435px;
+    margin: 0 auto;
+}
+
+.font-Rubik {
+    font-family: "Rubik", sans-serif !important;
+}
+
+.text-themeBlack {
+    color: #444444;
+}
+
+.form-control.auth-input {
+    background: #E5E9ED;
+    border: 0.55px solid rgba(208, 208, 208, 0.5);
+    border-radius: 2.2px;
+    height: 50px;
+    color: #000000;
+    font-family: 'Lato-Medium';
+}
+
+.form-control.auth-input:focus,
+.form-control.auth-input:focus-within,
+.form-control.auth-input:-internal-autofill-selected {
+    box-shadow: none;
+    background-color: -internal-light-dark(rgb(229, 233, 237), rgba(229, 233, 237, 0.4)) !important;
+}
+
+.login-title h4 {
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    margin-bottom: 32px !important;
+}
+
+button.btn.btn-submit-login {
+    background: #006EAB;
+    border-radius: 2.2px;
+    color: #FFFFFF;
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    height: 50px;
+}
+
+button.btn.btn-submit-login:hover,
+button.btn.btn-submit-login:focus,
+button.btn.btn-submit-login:active {
+    background: #0374b0;
+}
+
+.login-card .form-group.mb-4 {
+    margin-bottom: 35px !important;
+}
+
+button.btn.btn-show-eye,
+button.btn.btn-show-eye:active {
+    background: #E5E9ED;
+    border: 0.55px solid rgba(208, 208, 208, 0.5);
+    border-radius: 2.2px;
+    height: 50px;
+    border-left: 0 !important;
+}
+
+input.form-control.auth-input.border-right-0 {
+    border-right: 0;
+}
+
+.form-control.auth-input::-webkit-input-placeholder {
+    color: #787E8C;
+    font-family: 'Lato-Regular';
+    font-size: 16px;
+    letter-spacing: 0.4px;
+}
+
+.form-control.auth-input:-ms-input-placeholder {
+    color: #787E8C;
+    font-family: 'Lato-Regular';
+    font-size: 16px;
+    letter-spacing: 0.4px;
+}
+
+.form-control.auth-input::placeholder {
+    color: #787E8C;
+    font-family: 'Lato-Regular';
+    font-size: 16px;
+    letter-spacing: 0.4px;
+}
+
+.error-message-absolute {
+    position: absolute;
+    color: #dc3545;
+    letter-spacing: 0.3px;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.form-control.auth-input.pass::-webkit-input-placeholder {
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+}
+
+.form-control.auth-input.pass:-ms-input-placeholder {
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+}
+
+.form-control.auth-input.pass::placeholder {
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+}
+
+.bg-themeBlue {
+    background: #006EAB;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// Invoice detail CSS
+.invoice .text-secondary-d1 {
+    color: #728299 !important;
+}
+
+.invoice .page-header {
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    padding-top: .5rem;
+    border-bottom: 1px dotted #e2e2e2;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.invoice .page-title {
+    padding: 0;
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+.invoice .brc-default-l1 {
+    border-color: #dce9f0 !important;
+}
+
+.invoice .ml-n1,
+.invoice .mx-n1 {
+    margin-left: -.25rem !important;
+}
+
+.invoice .mr-n1,
+.invoice .mx-n1 {
+    margin-right: -.25rem !important;
+}
+
+.invoice .mb-4,
+.invoice .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.invoice hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.invoice .text-grey-m2 {
+    color: #888a8d !important;
+}
+
+.invoice .text-success-m2 {
+    color: #86bd68 !important;
+}
+
+.invoice .font-bolder,
+.text-600 {
+    font-weight: 600 !important;
+}
+
+.invoice .text-110 {
+    font-size: 110% !important;
+}
+
+.invoice .text-blue {
+    color: #478fcc !important;
+}
+
+.invoice .pb-25,
+.invoice .py-25 {
+    padding-bottom: .75rem !important;
+}
+
+.invoice .pt-25,
+.invoice .py-25 {
+    padding-top: .75rem !important;
+}
+
+.invoice .bgc-default-tp1 {
+    background-color: #006EAB !important;
+}
+
+.invoice .bgc-default-l4,
+.invoice .bgc-h-default-l4:hover {
+    background-color: #f3f8fa !important;
+}
+
+.invoice .page-header .page-tools {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.invoice .btn-light {
+    color: #757984;
+    background-color: #f5f6f9;
+    border-color: #dddfe4;
+}
+
+.invoice .w-2 {
+    width: 1rem;
+}
+
+.invoice .text-120 {
+    font-size: 120% !important;
+}
+
+.invoice .text-primary-m1 {
+    color: #4087d4 !important;
+}
+
+.invoice .text-danger-m1 {
+    color: #dd4949 !important;
+}
+
+.invoice .text-blue-m2 {
+    color: #68a3d5 !important;
+}
+
+.invoice .text-150 {
+    font-size: 150% !important;
+}
+
+.invoice .text-60 {
+    font-size: 60% !important;
+}
+
+.invoice .text-grey-m1 {
+    color: #7b7d81 !important;
+}
+
+.invoice .align-bottom {
+    vertical-align: bottom !important;
+}
+
+.big-font {
+    font-size: 1.75rem !important;
+}
+
+.ht-dashboard {
+    min-height: calc(100vh - 158px);
+}

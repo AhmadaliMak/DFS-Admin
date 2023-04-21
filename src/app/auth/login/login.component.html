@@ -1,0 +1,44 @@
+<div class="container h-100-vh">
+    <div class="row h-100-vh justify-content-center">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 align-self-center">
+            <div class="login-card" *ngIf="SignupForm">
+                <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+                    <div class="login-title">
+                        <h4 class="lato-bold mb-0 text-themeBlack text-center">SIGN IN TO YOUR ACCOUNT</h4>
+                    </div>
+                    <div class="form-group mb-4 position-relative">
+                        <label for="email" class="text-themeBlack lato-bold font16 mb-1">Email:</label>
+                        <input type="text" class="form-control auth-input" id="email" formControlName="email"
+                            placeholder="johnny@htseafood.com" autocomplete="off">
+                        <div *ngIf="submitted && f.email.errors" class="mb-0 font14 lato-bold error-message-absolute">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <!-- <div *ngIf="f.email.errors.email">Email is invalid</div> -->
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4 position-relative">
+                        <label for="password" class="text-themeBlack lato-bold font16 mb-1">Password:</label>
+                        <div class="input-group mb-0">
+                            <input [type]="password" class="form-control auth-input pass border-right-0" id="password"
+                                formControlName="password" placeholder="**********" autocomplete="off">
+                            <div class="input-group-append">
+                                <button class="btn btn-show-eye" type="button" (click)="hideShowPass()">
+                                    <i class="bi bi-eye-fill text-themeGrey" aria-hidden="true" *ngIf="!show"></i>
+                                    <i class="bi bi-eye-slash-fill text-themeGrey" aria-hidden="true" *ngIf="show"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="mb-0 font14 lato-bold error-message-absolute"
+                            *ngIf="submitted && SignupForm.get('password')?.errors">
+                            Password is required
+                        </p>
+                    </div>
+
+                    <div class="pt-2">
+                        <button class="btn btn-submit-login text-uppercase" type="submit">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

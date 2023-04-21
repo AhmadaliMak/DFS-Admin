@@ -1,0 +1,33 @@
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-end">
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+  <li class="nav-item" ngbDropdown placement="bottom-end">
+    <a
+      ngbDropdownToggle
+      class="nav-link waves-effect waves-dark pro-pic"
+      href="javascript:void(0)"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <img
+        src="assets/images/htfoodlogo.png"
+        class="rounded-circle img-fluid"
+        width="50"
+      />
+      <span class="ms-2">Admin</span>
+    </a>
+    <div class="dropdown-menu-right pt-1" ngbDropdownMenu>
+      <a class="dropdown-item py-2" href="javascript:void(0)"><i class="bi bi-person me-2 font20"></i>Profile</a>
+      <a class="dropdown-item py-2" href="javascript:void(0)"><i class="bi bi-gear me-2 font20"></i>Settings</a>
+      <a class="dropdown-item py-2 cursor-pointer" (click)="logout()"><i class="bi bi-power me-2 font20"></i>Logout</a>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+</ul>

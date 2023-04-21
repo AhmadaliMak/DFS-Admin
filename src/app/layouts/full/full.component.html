@@ -1,0 +1,50 @@
+<ng-container *ngIf="router?.url != '/login';">
+  <div id="main-wrapper" [ngClass]="{ 'show-sidebar': showMobileMenu }" dir="ltr" data-theme="light"
+    data-layout="vertical" [attr.data-sidebartype]="sidebartype" data-sidebar-position="fixed"
+    data-header-position="fixed" data-boxed-layout="full">
+    <header class="topbar" data-navbarbg="skin5">
+      <nav class="d-flex top-navbar navbar-expand-lg navbar-light">
+        <div class="navbar-header" [ngClass]="expandLogo ? 'expand-logo' : ''" data-logobg="skin5">
+          <a (click)="showMobileMenu = !showMobileMenu" class="nav-toggler waves-effect waves-light d-block d-lg-none"
+            href="javascript:void(0)">
+            <i [ngClass]="showMobileMenu ? 'bi bi-text-left fs-6' : 'bi bi-text-left fs-6'"></i>
+          </a>
+          <a class="navbar-brand d-block text-center text-white" href="/">
+            <span class="logo-text lato-bold font20">
+              H&T SEAFOOD, INC
+            </span>
+          </a>
+          <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
+            data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed">
+            <i class="bi bi-text-right fs-6"></i>
+          </a>
+        </div>
+        <div class="navbar-collapse collapse ms-0" id="navbarSupportedContent" data-navbarbg="skin6"
+          [ngbCollapse]="!isCollapsed">
+          <app-navigation (toggleSidebar)="toggleSidebarType()" class="w-100"></app-navigation>
+        </div>
+      </nav>
+    </header>
+    <aside class="left-sidebar" data-sidebarbg="skin5" (mouseover)="Logo()" (mouseout)="Logo()">
+      <app-sidebar></app-sidebar>
+    </aside>
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+      <footer class="footer text-center">
+        All Rights Reserved by H&T SEAFOOD, INC.
+      </footer>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="router?.url == '/login';">
+  <div class="auth-page-wrapper h-100-vh">
+    <div class="container-fluid h-100-vh">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-container>
