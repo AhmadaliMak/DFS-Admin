@@ -1,7 +1,7 @@
 // 
 // Custom layout variables
 // 
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
 // 
 // Theme Global setting colors
@@ -40,7 +40,7 @@ $sidebar-icons: #fff;
 $sidebar-text-dark: #212529;
 $sidebar-icons-dark: #4f5467;
 
-$sidebar-width-full: 250px;
+$sidebar-width-full: 275px;
 $sidebar-width-mini: 65px;
 
 // 
@@ -166,7 +166,7 @@ $body-color: #6a7a8c !default;
 // Typography
 // 
 $font-size-base: 1rem;
-$font-family-sans-serif: "Rubik", sans-serif !default;
+$font-family-sans-serif: "IBM Plex Sans", sans-serif !default;
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-medium: 500 !default;
@@ -205,9 +205,9 @@ $display-font-sizes: (
 // 
 // Cards
 // 
-$card-border-width: 0px !default;
-$card-border-color: transparent !default;
-$card-border-radius: 0px !default;
+$card-border-width: 1px !default;
+$card-border-color: #e9e9ef !default;
+$card-border-radius: .25rem !default;
 $card-box-shadow: unset !default;
 
 // 

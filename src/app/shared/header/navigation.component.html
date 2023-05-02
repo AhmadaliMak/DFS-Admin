@@ -1,30 +1,29 @@
 <!-- ============================================================== -->
 <!-- Right side toggle and nav items -->
 <!-- ============================================================== -->
-<ul class="navbar-nav float-end">
+<ul class="navbar-nav float-end top-menu-DFS">
   <!-- ============================================================== -->
   <!-- User profile and search -->
   <!-- ============================================================== -->
   <li class="nav-item" ngbDropdown placement="bottom-end">
-    <a
-      ngbDropdownToggle
-      class="nav-link waves-effect waves-dark pro-pic"
-      href="javascript:void(0)"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      <img
-        src="assets/images/htfoodlogo.png"
-        class="rounded-circle img-fluid"
-        width="50"
-      />
-      <span class="ms-2">Admin</span>
+    <a ngbDropdownToggle class="nav-link waves-effect waves-dark pro-pic" href="javascript:void(0)"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="assets/images/default-user.svg" class="rounded-circle img-fluid" width="50" />
+      <span class="ms-2 font-size-5 font-weight-600">{{userDetail?.firstname | titlecase}}</span>
     </a>
     <div class="dropdown-menu-right pt-1" ngbDropdownMenu>
-      <a class="dropdown-item py-2" href="javascript:void(0)"><i class="bi bi-person me-2 font20"></i>Profile</a>
-      <a class="dropdown-item py-2" href="javascript:void(0)"><i class="bi bi-gear me-2 font20"></i>Settings</a>
-      <a class="dropdown-item py-2 cursor-pointer" (click)="logout()"><i class="bi bi-power me-2 font20"></i>Logout</a>
+      <a class="dropdown-item py-2 font-weight-500 font-size-15" href="javascript:void(0)">
+        <i-feather name="user" class="me-2"></i-feather>
+        Profile
+      </a>
+      <a class="dropdown-item py-2 font-weight-500 font-size-15" routerLink="change-password">
+        <i-feather name="edit_2" class="me-2"></i-feather>
+        Change Password
+      </a>
+      <a class="dropdown-item py-2 font-weight-500 font-size-15 cursor-pointer" (click)="logout()">
+        <i-feather name="log-out" class="me-2"></i-feather>
+        Logout
+      </a>
     </div>
   </li>
   <!-- ============================================================== -->

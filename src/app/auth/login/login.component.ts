@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('auth-page');
     this.SignupForm = this._fb.group({
-      // , Validators.email
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
@@ -45,13 +44,13 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if (this.SignupForm.valid) {
       this.spinner.show();
-      this.Rest.post('/login.php', {
-        'user_name': loginFormValue.email,
+      this.Rest.post('login', {
+        'email': loginFormValue.email,
         'password': loginFormValue.password
       }, environment.APIKey).subscribe({
         next: (res: any) => {
-          if (res.status == true) {
-            this.Rest.setSessionStorage(JSON.stringify(res));
+          if (res.status == 200) {
+            this.Rest.setSessionStorage(JSON.stringify(res.data));
             this.notifier.notify('success', res.msg);
             this.spinner.hide();
             this.router.navigate(["dashboard"]);

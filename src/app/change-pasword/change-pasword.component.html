@@ -1,0 +1,85 @@
+<!-- start page title -->
+<app-pagetitle title="Change Password" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+<!-- end page title -->
+
+<div class="row mt-4">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12">
+        <div class="general-form-inputs">
+            <form [formGroup]="validationForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Old password:</label>
+                            <div class="input-group mb-0">
+                                <input [type]="password" formControlName="oldPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f.oldPassword.errors }" class="form-control auth-input pass border-right-0"
+                                id="userpassword" placeholder="**********" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="btn btn-show-eye" type="button" (click)="hideShowPass()">
+                                        <i class="bi bi-eye-fill text-themeGrey" aria-hidden="true" *ngIf="!show"></i>
+                                        <i class="bi bi-eye-slash-fill text-themeGrey" aria-hidden="true" *ngIf="show"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && f.oldPassword.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.oldPassword.errors.required">Old password is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Email:</label>
+                            <input type="email" value="{{userDetails?.email}}" class="form-control auth-input"
+                                id="useremail" placeholder="Enter email" disabled>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">New password:</label>
+                            <div class="input-group mb-0">
+                                <input [type]="password1" formControlName="newPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f.newPassword.errors }" class="form-control auth-input pass border-right-0"
+                                id="userpassword" placeholder="**********" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="btn btn-show-eye" type="button" (click)="hideShowPass1()">
+                                        <i class="bi bi-eye-fill text-themeGrey" aria-hidden="true" *ngIf="!show1"></i>
+                                        <i class="bi bi-eye-slash-fill text-themeGrey" aria-hidden="true" *ngIf="show1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && f.newPassword.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.newPassword.errors.required">New password is required.</div>
+                                <!-- <div *ngIf="f.newPassword.errors.minlength">New password must be at least 8 characters.</div> -->
+                                <div *ngIf="f.newPassword.errors.pattern">Minimum eight characters, at least one uppercase letter, one lowercase letter and one number.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Confirm password:</label>
+                            <div class="input-group mb-0">
+                                <input [type]="password2" formControlName="confirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" class="form-control auth-input pass border-right-0"
+                                id="userpassword" placeholder="**********" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="btn btn-show-eye" type="button" (click)="hideShowPass2()">
+                                        <i class="bi bi-eye-fill text-themeGrey" aria-hidden="true" *ngIf="!show2"></i>
+                                        <i class="bi bi-eye-slash-fill text-themeGrey" aria-hidden="true" *ngIf="show2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback-new">
+                                <span *ngIf="f.confirmPassword.errors.required">Confirm password is required.</span>
+                                <span *ngIf="f.confirmPassword.errors.mustMatch">Confirm password must be same as new password.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="form-group mt-4 text-center">
+                    <button type="submit" class="btn btn-primary save-cp-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -18,6 +18,8 @@ import { FullComponent } from './layouts/full/full.component';
 
 import { NavigationComponent } from './shared/header/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { FeatherModule } from 'angular-feather';
+import { allIcons } from 'angular-feather/icons';
 
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +28,10 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LoginComponent } from './auth/login/login.component';
+import { SimplebarAngularModule } from 'simplebar-angular';
+
+import { IconsModule } from './icons/icons.module';
+import { TranslateModule } from "@ngx-translate/core";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -85,6 +91,7 @@ const customNotifierOptions: NotifierOptions = {
   ],
   imports: [
     CommonModule,
+    IconsModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -92,9 +99,12 @@ const customNotifierOptions: NotifierOptions = {
     HttpClientModule,
     NgbModule,
     NgxSpinnerModule,
+    FeatherModule.pick(allIcons),
     NotifierModule.withConfig(customNotifierOptions),
     RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' }),
     PerfectScrollbarModule,
+    SimplebarAngularModule,
+    TranslateModule.forRoot(),
   ],
   providers: [
     {

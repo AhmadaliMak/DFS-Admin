@@ -1,5 +1,5 @@
 // Sidebar
-$sidebar-link-padding: 14px 15px;
+$sidebar-link-padding: .62rem 1.5rem;
 $sidebar-icon-size: 18px;
 $sidebar-first-level-padding: 0 0 10px 0;
 $sidebar-first-level-link-padding: 10px 15px;
@@ -31,7 +31,7 @@ Main sidebar
   z-index: 99;
   padding-top: 64px;
   background: $sidebar;
-  box-shadow: $shadow;
+  border-right: 1px solid #e9e9ef;
   transition: 0.2s ease-in;
 }
 
@@ -44,26 +44,26 @@ sidebar navigation
     .sidebar-item {
       width: $sidebar-width-full;
       .sidebar-link {
-        color: $sidebar-text;
+        color: #545a6d;
         padding: $sidebar-link-padding;
         display: flex;
         white-space: nowrap;
         align-items: center;
         line-height: 25px;
-        opacity: 0.6;
         i {
           font-style: normal;
           width: 35px;
           line-height: 25px;
           font-size: $sidebar-icon-size;
-          color: $sidebar-icons;
+          color: #545a6d;
           display: flex;
           align-items: center;
           justify-content: center;
         }
         &.active,
         &:hover {
-          opacity: 1;
+          // opacity: 1;
+          color: #5156be;
           .feather {
             color: $white;
           }

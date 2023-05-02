@@ -1,0 +1,135 @@
+<!-- start page title -->
+<app-pagetitle title="User Detail" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+<!-- end page title -->
+
+<div class="row mt-0" *ngIf="userData">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-12 col-xs-12">
+        <div class="user-custom-card card">
+            <div class="card-body">
+                <div class="text-center">
+                    <ng-container *ngIf="userData?.profilepic">
+                        <img src="{{userData?.profilepic}}" width="100" class="rounded-circle default-user-image">
+                    </ng-container>
+                    <ng-container *ngIf="!userData?.profilepic">
+                        <img src="assets/images/default-user.svg" width="100" class="rounded-circle">
+                    </ng-container>
+                    <h4 class="card-title my-3 font-weight-700 text-themeBlack-new">
+                        {{userData?.firstname | titlecase}} {{userData?.lastname | titlecase}}
+                    </h4>
+                    <div class="user-detail-basic text-start">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        User Name
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.username}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Login With
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.login_with}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Promo Code
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.referal_code}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-7 col-sm-12 col-xs-12">
+        <div class="user-custom-card card">
+            <div class="card-body">
+                <div class="">
+                    <h4 class="card-title my-3 font-weight-700 text-themeBlack-new">
+                        Personal Information
+                    </h4>
+                    <div class="user-detail-basic text-start">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Email
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.email}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Mobile Number
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.mobile}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Date of Birth
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.dob | date:'dd MMMM, y'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Bonus Amount
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.bonus | number}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Deposite Amount
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.deposite_amount | number}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Winning Amount
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.winning_amount | number}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Joining Date
+                                    </td>
+                                    <td class="p-2">
+                                        {{userData?.created_at | date:'dd MMMM, y'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-weight-700 text-themeBlack-new">
+                                        Status
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="badge bg-success font-size-13" *ngIf="userData?.status == 1">Active</span>
+                                        <span class="badge bg-danger font-size-13" *ngIf="userData?.status == 0">Inactive</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

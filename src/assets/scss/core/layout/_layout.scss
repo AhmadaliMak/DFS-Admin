@@ -10,14 +10,14 @@
 }
 
 .page-wrapper {
-  background: $body-bg;
+  background: $main-body-bg;
   position: relative;
   transition: 0.2s ease-in;
 }
 
 .page-wrapper > .container-fluid {
   padding: 20px;
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 120px);
   // max-width: $page-wrapper-max-width;
   margin: 0 auto;
 }
@@ -28,6 +28,7 @@ Footer
 
 .footer {
   padding: 15px 20px;
+  border-top: 1px solid #e9e9ef;
 }
 
 /*******************
