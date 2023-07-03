@@ -210,33 +210,39 @@ export const MENU: MenuItem[] = [
         id: 136,
         label: 'Settings',
         icon: 'settings',
-        subItems: [
-            {
-                id: 137,
-                label: 'Subscription',
-                link: '/list/consultantlist',
-                parentId: 136
-            },
-            {
-                id: 138,
-                label: 'Gneral',
-                link: '/list/consultantlist',
-                parentId: 136
-            },
-            {
-                id: 139,
-                label: 'Promo Code',
-                link: '/list/consultantlist',
-                parentId: 136
-            },
-            {
-                id: 140,
-                label: 'Promotion Code',
-                link: '/list/consultantlist',
-                parentId: 136
-            }
-        ]
+        link: '/general-setting'
     },
+    // {
+    //     id: 136,
+    //     label: 'Settings',
+    //     icon: 'settings',
+    //     subItems: [
+    //         {
+    //             id: 137,
+    //             label: 'Subscription',
+    //             link: '/list/consultantlist',
+    //             parentId: 136
+    //         },
+    //         {
+    //             id: 138,
+    //             label: 'General',
+    //             link: '/general-setting',
+    //             parentId: 136
+    //         },
+    //         {
+    //             id: 139,
+    //             label: 'Promo Code',
+    //             link: '/list/consultantlist',
+    //             parentId: 136
+    //         },
+    //         {
+    //             id: 140,
+    //             label: 'Promotion Code',
+    //             link: '/list/consultantlist',
+    //             parentId: 136
+    //         }
+    //     ]
+    // },
     {
         id: 141,
         label: 'Email Management',

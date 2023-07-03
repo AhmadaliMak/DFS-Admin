@@ -10,6 +10,7 @@ import { ContentEditComponent } from './content-edit/content-edit.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
 import { FaqListComponent } from './faq-list/faq-list.component';
 import { HIWRulesComponent } from './HIW-rules/HIW-rules.component';
+import { GeneralSettingComponent } from './general-setting/general-setting.component';
 
 export const Approutes: Routes = [
   {
@@ -56,6 +57,10 @@ export const Approutes: Routes = [
       {
         path: 'hiw-rules',
         component: HIWRulesComponent,
+      },
+      {
+        path: 'general-setting',
+        component: GeneralSettingComponent,
       },
       {
         path: 'about',

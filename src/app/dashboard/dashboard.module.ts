@@ -18,6 +18,7 @@ import { ContentListComponent } from "../content-list/content-list.component";
 import { ContentEditComponent } from "../content-edit/content-edit.component";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FaqListComponent } from "../faq-list/faq-list.component";
+import { GeneralSettingComponent } from "../general-setting/general-setting.component";
 
 const routes: Routes = [
   {
@@ -53,7 +54,8 @@ const routes: Routes = [
     ContentEditComponent,
     TopicListComponent,
     HIWRulesComponent,
-    FaqListComponent
+    FaqListComponent,
+    GeneralSettingComponent
   ],
 })
 export class DashboardModule {}
