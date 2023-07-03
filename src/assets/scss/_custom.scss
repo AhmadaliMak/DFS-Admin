@@ -50,7 +50,7 @@
 
 body.auth-page {
     height: 100%;
-    background: #006EAB;
+    background: #1B1B1B;
     min-height: 100vh;
 }
 
@@ -733,9 +733,14 @@ a.paginate_button.current {
 }
 
 .custom-datatable table.dataTable thead th.action-table {
-    width: 70px;
-    min-width: 70px;
+    width: 75px;
+    min-width: 75px;
     padding-right: 10px !important;
+}
+
+.custom-datatable.topic-list table.dataTable thead th.action-table {
+    width: 110px;
+    min-width: 110px;
 }
 
 .action-table-td svg {
@@ -748,6 +753,10 @@ a.paginate_button.current {
 .DFS-confirmation-modal .modal-content {
     border: 4px solid #e9e9ef;
     background: #fbfaff;
+}
+
+.DFS-confirmation-modal .modal-content .modal-header {
+    border-bottom: 4px solid rgba(233,233,239,0.5);
 }
 
 button.btn-new-ui-decline {
@@ -845,4 +854,18 @@ th.table-description {
     min-height: 250px!important;
     color: #000000 !important;
     font-family: "Lato-Medium" !important;
+}
+
+.general-form-inputs .form-control.auth-input.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-apperarance: none;
+    appearance: none;
+    background-image: url('../images/select-down-arrow.svg');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 3px bottom 14px;
+    background-origin: content-box;
+    cursor: pointer;
+    padding-right: 7px !important;
 }

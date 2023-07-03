@@ -7,6 +7,9 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentEditComponent } from './content-edit/content-edit.component';
+import { TopicListComponent } from './topic-list/topic-list.component';
+import { FaqListComponent } from './faq-list/faq-list.component';
+import { HIWRulesComponent } from './HIW-rules/HIW-rules.component';
 
 export const Approutes: Routes = [
   {
@@ -40,7 +43,19 @@ export const Approutes: Routes = [
       },
       {
         path: 'content-list',
-        component: ContentListComponent
+        component: ContentListComponent,
+      },
+      {
+        path: 'topic-list',
+        component: TopicListComponent,
+      },
+      {
+        path: 'faq-list',
+        component: FaqListComponent,
+      },
+      {
+        path: 'hiw-rules',
+        component: HIWRulesComponent,
       },
       {
         path: 'about',

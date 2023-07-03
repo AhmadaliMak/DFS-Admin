@@ -34,13 +34,13 @@ export const MENU: MenuItem[] = [
             {
                 id: 106,
                 label: 'List Topics',
-                link: '/list/consultantlist',
+                link: '/topic-list',
                 parentId: 105
             },
             {
                 id: 107,
                 label: 'List FAQs',
-                link: '/list/consultantlist',
+                link: '/faq-list',
                 parentId: 105
             }
         ]
@@ -156,49 +156,55 @@ export const MENU: MenuItem[] = [
         icon: 'file-text',
         link: '/content-list'
     },
+    // {
+    //     id: 129,
+    //     label: 'Policy Management',
+    //     icon: 'command',
+    //     subItems: [
+    //         {
+    //             id: 130,
+    //             label: 'T&C',
+    //             link: '/list/consultantlist',
+    //             parentId: 129
+    //         },
+    //         {
+    //             id: 131,
+    //             label: 'Privacy Policy',
+    //             link: '/list/consultantlist',
+    //             parentId: 129
+    //         },
+    //         {
+    //             id: 132,
+    //             label: 'About Us',
+    //             link: '/list/consultantlist',
+    //             parentId: 129
+    //         },
+    //         {
+    //             id: 133,
+    //             label: 'Responsible Gaming',
+    //             link: '/list/consultantlist',
+    //             parentId: 129
+    //         }
+    //     ]
+    // },
+    // {
+    //     id: 134,
+    //     label: 'HOW It Work Management',
+    //     icon: 'globe',
+    //     subItems: [
+    //         {
+    //             id: 135,
+    //             label: 'HOW It Work Rules',
+    //             link: '/hiw-rules',
+    //             parentId: 134
+    //         }
+    //     ]
+    // },
     {
-        id: 129,
-        label: 'Policy Management',
-        icon: 'command',
-        subItems: [
-            {
-                id: 130,
-                label: 'T&C',
-                link: '/list/consultantlist',
-                parentId: 129
-            },
-            {
-                id: 131,
-                label: 'Privacy Policy',
-                link: '/list/consultantlist',
-                parentId: 129
-            },
-            {
-                id: 132,
-                label: 'About Us',
-                link: '/list/consultantlist',
-                parentId: 129
-            },
-            {
-                id: 133,
-                label: 'Responsible Gaming',
-                link: '/list/consultantlist',
-                parentId: 129
-            }
-        ]
-    },
-    {
-        id: 134,
-        label: 'HOW It Work Management',
+        id: 135,
+        label: 'HOW It Work Rules',
         icon: 'globe',
-        subItems: [
-            {
-                id: 135,
-                label: 'HOW It Work Rules',
-                link: '/list/consultantlist',
-                parentId: 134
-            }
-        ]
+        link: '/hiw-rules'
     },
     {
         id: 136,

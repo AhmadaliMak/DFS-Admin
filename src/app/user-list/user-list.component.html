@@ -46,9 +46,13 @@
                         </td>
                     </tr>
                 </tbody>
-                <tfoot *ngIf="userData?.data?.recordsTotal === 0">
-                    No Data Found!
-                </tfoot>
+                <tbody *ngIf="userData?.recordsTotal === 0">
+                    <tr>
+                        <td class="text-center" colspan="6">
+                            No Data Found!
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
