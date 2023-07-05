@@ -1,7 +1,65 @@
 <!-- start page title -->
-<app-pagetitle title="Settings" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+<app-pagetitle
+  title="Settings"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetitle>
 <!-- end page title -->
 
 <div>
-    Test
+  <form [formGroup]="versionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row version-input">
+      <label for="android-version" class="col-xl-2 col-sm-3 col-form-label"
+        >Android Version:</label
+      >
+      <div class="col-sm-4">
+        <input
+          type="text"
+          id="android-version"
+          formControlName="androidVersion"
+          oninput="this.value = this.value.replace(/[^\d.]/g, '')"
+        />
+        <div
+          *ngIf="submitted && f.androidVersion.errors"
+          class="invalid-feedback-new"
+        >
+          <div *ngIf="f.androidVersion.errors.required">
+            Android version is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row version-input">
+      <label for="ios-version" class="col-xl-2 col-sm-3 col-form-label"
+        >iOS Version:</label
+      >
+      <div class="col-sm-4">
+        <input
+          type="text"
+          id="ios-version"
+          formControlName="iosVersion"
+          inputmode="numeric"
+          oninput="this.value = this.value.replace(/[^\d.]/g, '')"
+        />
+        <div
+          *ngIf="submitted && f.iosVersion.errors"
+          class="invalid-feedback-new"
+        >
+          <div *ngIf="f.iosVersion.errors.required">
+            iOS version is required.
+          </div>
+          <!-- <div *ngIf="f.iosVersion.errors.mustBeNumberValidator">iOS version must be a number.</div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xl-1 col-md-2 col-sm-2 col-xs-1">
+          <button type="submit" class="btn btn-primary save-cp-btn w-100">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
