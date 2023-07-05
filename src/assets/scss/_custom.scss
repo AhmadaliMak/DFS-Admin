@@ -100,7 +100,7 @@ body.auth-page {
 }
 
 .form-control.auth-input:disabled {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 }
 
 .form-control.auth-input:focus,
@@ -868,4 +868,16 @@ th.table-description {
     background-origin: content-box;
     cursor: pointer;
     padding-right: 7px !important;
+}
+
+.custom-switch {
+    margin: 9px 0;
+}
+
+.custom-switch .switch.checked {
+    background: #7460ee;
+}
+
+button.save-cp-btn.add-btn-new-price {
+    width: 100px;
 }

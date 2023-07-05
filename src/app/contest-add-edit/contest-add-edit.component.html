@@ -1,0 +1,180 @@
+<!-- start page title -->
+<app-pagetitle title="{{pageTitle}}" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+<!-- end page title -->
+
+<!-- *ngIf="contentData" -->
+<div class="row mt-0">
+    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="general-form-inputs">
+            <form [formGroup]="contestForm">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Sports:</label>
+                            <div class="input-group mb-0">
+                                <select formControlName="sportsId" class="form-control auth-input select" id="sportsId"
+                                    (change)="changeSport($event, 'change')" [attr.disabled]="URLContestId">
+                                    <option value="">Select sports</option>
+                                    <ng-container *ngFor="let sport of gameListData;let sp = index;">
+                                        <option value="{{sport?._id}}">{{sport?.name}}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div *ngIf="submitted && f.sportsId.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.sportsId.errors.required">Sports is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Game:</label>
+                            <div class="input-group mb-0">
+                                <select formControlName="gameId" class="form-control auth-input select" id="gameId" [attr.disabled]="URLContestId">
+                                    <option value="">Select game</option>
+                                    <ng-container *ngFor="let game of selectedGame;let ga = index;">
+                                        <option value="{{game?.gameId}}">{{game?.match_type}} ({{game?.date}})</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div *ngIf="submitted && f.gameId.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.gameId.errors.required">Game is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Contest Name:</label>
+                            <div class="input-group mb-0">
+                                <input type="text" formControlName="name" class="form-control auth-input " id="name"
+                                    autocomplete="off">
+                            </div>
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.name.errors.required">Contest name is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Total Entry:</label>
+                            <div class="input-group mb-0">
+                                <input type="text" formControlName="total_entry" class="form-control auth-input "
+                                    id="total_entry" autocomplete="off" (keypress)="numberOnly($event, 'num')">
+                            </div>
+                            <div *ngIf="submitted && f.total_entry.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.total_entry.errors.required">Total entry is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">User Max Entry:</label>
+                            <div class="input-group mb-0">
+                                <input type="text" formControlName="user_max_entry" class="form-control auth-input "
+                                    id="user_max_entry" autocomplete="off" (keypress)="numberOnly($event, 'num')">
+                            </div>
+                            <div *ngIf="submitted && f.user_max_entry.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.user_max_entry.errors.required">User max entry is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Entry Fees:</label>
+                            <div class="input-group mb-0">
+                                <input type="text" formControlName="entry_fees" class="form-control auth-input "
+                                    id="entry_fees" autocomplete="off" (keypress)="numberOnly($event, 'num')">
+                            </div>
+                            <div *ngIf="submitted && f.entry_fees.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.entry_fees.errors.required">Entry fees is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Payout:</label>
+                            <div class="input-group mb-0">
+                                <input type="text" formControlName="payout" class="form-control auth-input " id="payout"
+                                    autocomplete="off" (keypress)="numberOnly($event, 'num')">
+                            </div>
+                            <div *ngIf="submitted && f.payout.errors" class="invalid-feedback-new">
+                                <div *ngIf="f.payout.errors.required">Payout is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group mb-4">
+                            <label class="text-themeBlack lato-semibold font16 mb-1">Guranted:</label>
+                            <div class="input-group custom-switch">
+                                <ui-switch uncheckedLabel="No" checkedLabel="Yes" size="medium"
+                                    formControlName="isguranted" checkedTextColor="#FBFAFF"></ui-switch>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row mt-4 mb-3">
+                    <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="d-flex justify-content-between">
+                            <label class="text-themeBlack font-size-18 page-title-main font-weight-700 mb-0">
+                                Winning Price:
+                            </label>
+                            <button type="button" class="btn btn-primary save-cp-btn add-btn-new-price"
+                                (click)="addWinningPrice()">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" formArrayName="winning_price">
+                    <ng-container *ngFor="let quantity of winningPrice().controls; let i=index" [formGroupName]="i">
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-xs-4">
+                            <div class="form-group mb-4">
+                                <label class="text-themeBlack lato-semibold font16 mb-1">Rank:</label>
+                                <div class="input-group mb-0">
+                                    <input type="text" formControlName="rank" class="form-control auth-input " id="rank"
+                                        autocomplete="off" (keypress)="numberOnly($event, 'str')">
+                                </div>
+                                <div *ngIf="submitted && winningPrice()?.controls[i]?.controls?.rank?.errors"
+                                    class="invalid-feedback-new">
+                                    <div *ngIf="winningPrice()?.controls[i]?.controls?.rank?.errors?.required">Rank is
+                                        required.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-xs-4">
+                            <div class="form-group mb-4">
+                                <label class="text-themeBlack lato-semibold font16 mb-1">Price:</label>
+                                <div class="input-group mb-0">
+                                    <input type="text" formControlName="price" class="form-control auth-input "
+                                        id="price" autocomplete="off" (keypress)="numberOnly($event, 'num')">
+                                </div>
+                                <div *ngIf="submitted && winningPrice()?.controls[i]?.controls?.price?.errors" class="invalid-feedback-new">
+                                    <div *ngIf="winningPrice()?.controls[i]?.controls?.price?.errors?.required">Price is required.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-xs-4 align-self-end">
+                            <button (click)="removeWinningPrice(i)" class="btn btn-danger mb-4"
+                                type="button">Remove</button>
+                        </div>
+                    </ng-container>
+                </div>
+
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <button type="submit" class="btn btn-primary save-cp-btn w-100" (click)="onSubmit(1)">Publish</button>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <button type="submit" class="btn btn-danger save-cp-btn w-100" (click)="onSubmit(0)">Draft</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

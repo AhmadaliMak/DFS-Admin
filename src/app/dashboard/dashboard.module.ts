@@ -19,6 +19,9 @@ import { ContentEditComponent } from "../content-edit/content-edit.component";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FaqListComponent } from "../faq-list/faq-list.component";
 import { GeneralSettingComponent } from "../general-setting/general-setting.component";
+import { ContestListComponent } from "../contest-list/contest-list.component";
+import { ContestAddEditComponent } from "../contest-add-edit/contest-add-edit.component";
+import { UiSwitchModule } from 'ngx-ui-switch';
 
 const routes: Routes = [
   {
@@ -41,7 +44,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CountToModule,
     DataTablesModule,
-    CKEditorModule
+    CKEditorModule,
+    UiSwitchModule
   ],
   declarations: [
     DashboardComponent,
@@ -55,7 +59,9 @@ const routes: Routes = [
     TopicListComponent,
     HIWRulesComponent,
     FaqListComponent,
-    GeneralSettingComponent
+    GeneralSettingComponent,
+    ContestListComponent,
+    ContestAddEditComponent
   ],
 })
 export class DashboardModule {}

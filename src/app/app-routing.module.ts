@@ -11,6 +11,8 @@ import { TopicListComponent } from './topic-list/topic-list.component';
 import { FaqListComponent } from './faq-list/faq-list.component';
 import { HIWRulesComponent } from './HIW-rules/HIW-rules.component';
 import { GeneralSettingComponent } from './general-setting/general-setting.component';
+import { ContestListComponent } from './contest-list/contest-list.component';
+import { ContestAddEditComponent } from './contest-add-edit/contest-add-edit.component';
 
 export const Approutes: Routes = [
   {
@@ -43,6 +45,14 @@ export const Approutes: Routes = [
         component: ContentEditComponent,
       },
       {
+        path: 'add-contest',
+        component: ContestAddEditComponent,
+      },
+      {
+        path: 'edit-contest/:contestId',
+        component: ContestAddEditComponent,
+      },
+      {
         path: 'content-list',
         component: ContentListComponent,
       },
@@ -61,6 +71,10 @@ export const Approutes: Routes = [
       {
         path: 'general-setting',
         component: GeneralSettingComponent,
+      },
+      {
+        path: 'contest-list',
+        component: ContestListComponent,
       },
       {
         path: 'about',
