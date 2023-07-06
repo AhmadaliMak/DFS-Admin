@@ -20,6 +20,7 @@ export class GeneralSettingComponent implements OnInit {
   currentType: any;
   submitted: boolean = false;
   versionForm: FormGroup;
+  versionData: any;
 
   constructor(
     private Rest: RestService,
@@ -46,10 +47,31 @@ export class GeneralSettingComponent implements OnInit {
         androidVersion: ['', Validators.required],
         iosVersion: ['', Validators.required]
       });
+      this.getVersionData();
     }
   }
 
   get f() { return this.versionForm.controls; }
+
+  getVersionData() {
+    this.spinner.show()
+    this.Rest.get(`get-settings`, this.userDetail.token).subscribe({
+      next: (res: any) => {
+        if (res.status == 200) {
+          this.versionData = res.data;
+          this.setValueNew(this.versionData)
+          this.spinner.hide();
+        } else {
+          this.spinner.hide();
+          this.notifier.notify('error', res.msg);
+        }
+      },
+      error: error => {
+        this.spinner.hide();
+        this.notifier.notify("error", error.message);
+      }
+    });
+  }
 
   onSubmit() {
     this.submitted = true;
@@ -64,16 +86,19 @@ export class GeneralSettingComponent implements OnInit {
 
   setValueNew(dataValue: any) {
     this.versionForm.patchValue({
-      android_version: dataValue?.androidVersion ? dataValue?.androidVersion : '',
-      ios_version: dataValue?.iosVersion ? dataValue?.iosVersion : ''
+      androidVersion: dataValue?.android_version ? dataValue?.android_version : '',
+      iosVersion: dataValue?.ios_version ? dataValue?.ios_version : ''
     });
   }
 
   addData(data: any) {
-    this.Rest.post(`update-settings`, {
-      'androidVersion': data?.androidVersion,
-      'iosVersion': data?.iosVersion
-    }, this.userDetail.token).subscribe({
+    let obj = {
+      data: {
+        'android_version': data?.androidVersion,
+        'ios_version': data?.iosVersion
+      }
+    }
+    this.Rest.post(`update-settings`, obj, this.userDetail.token).subscribe({
       next: (res: any) => {
         if (res.status == 200) {
           this.notifier.notify('success', res.msg);
