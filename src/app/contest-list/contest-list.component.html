@@ -47,9 +47,10 @@
                                 <ng-container *ngIf="contest?.status == 0">Draft</ng-container>
                             </td>
                             <td class="action-table-td text-center" style="width: 100px; min-width: 100px;">
+                                <!-- *ngIf="contest?.status == 0" -->
                                 <i-feather name="edit-2" placement="top" ngbTooltip="Edit" class="cursor-pointer" routerLink="/edit-contest/{{contest?._id}}"></i-feather>
                                 <i-feather name="eye" placement="top" ngbTooltip="Details" class="cursor-pointer mx-1" routerLink="/contest-detail/{{contest?._id}}"></i-feather>
-                                <i-feather name="trash-2" placement="top" ngbTooltip="Delete" class="cursor-pointer" (click)="confirmModalOpen(DialogBoxComponent, in, contest._id)"></i-feather>
+                                <!-- <i-feather name="trash-2" placement="top" ngbTooltip="Delete" class="cursor-pointer" (click)="confirmModalOpen(DialogBoxComponent, in, contest._id)"></i-feather> -->
                             </td>
                         </tr>
                     </tbody>
