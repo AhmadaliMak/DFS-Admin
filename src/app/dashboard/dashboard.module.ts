@@ -22,6 +22,7 @@ import { GeneralSettingComponent } from "../general-setting/general-setting.comp
 import { ContestListComponent } from "../contest-list/contest-list.component";
 import { ContestAddEditComponent } from "../contest-add-edit/contest-add-edit.component";
 import { UiSwitchModule } from 'ngx-ui-switch';
+import { ContestDetailComponent } from '../contest-detail/contest-detail.component';
 
 const routes: Routes = [
   {
@@ -61,7 +62,8 @@ const routes: Routes = [
     FaqListComponent,
     GeneralSettingComponent,
     ContestListComponent,
-    ContestAddEditComponent
+    ContestAddEditComponent,
+    ContestDetailComponent
   ],
 })
 export class DashboardModule {}

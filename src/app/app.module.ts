@@ -87,7 +87,7 @@ const customNotifierOptions: NotifierOptions = {
     FullComponent,
     NavigationComponent,
     SidebarComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

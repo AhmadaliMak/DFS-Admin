@@ -166,12 +166,17 @@
                     </ng-container>
                 </div>
 
-                <div class="row mt-4 justify-content-center">
+                <div class="row mt-4 justify-content-center" *ngIf="contestDetailData?.status == 0">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
                         <button type="submit" class="btn btn-primary save-cp-btn w-100" (click)="onSubmit(1)">Publish</button>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
                         <button type="submit" class="btn btn-danger save-cp-btn w-100" (click)="onSubmit(0)">Draft</button>
+                    </div>
+                </div>
+                <div class="row mt-4 justify-content-center" *ngIf="contestDetailData?.status == 1">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <button type="submit" class="btn btn-success save-cp-btn w-100" (click)="backToList()">Back</button>
                     </div>
                 </div>
             </form>

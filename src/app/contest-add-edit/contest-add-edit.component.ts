@@ -253,4 +253,8 @@ export class ContestAddEditComponent implements OnInit {
     });
   }
 
+  backToList(){
+    this.router.navigate(["contest-list"]);
+  }
+
 }

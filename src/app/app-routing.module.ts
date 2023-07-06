@@ -13,6 +13,7 @@ import { HIWRulesComponent } from './HIW-rules/HIW-rules.component';
 import { GeneralSettingComponent } from './general-setting/general-setting.component';
 import { ContestListComponent } from './contest-list/contest-list.component';
 import { ContestAddEditComponent } from './contest-add-edit/contest-add-edit.component';
+import { ContestDetailComponent } from './contest-detail/contest-detail.component';
 
 export const Approutes: Routes = [
   {
@@ -75,6 +76,10 @@ export const Approutes: Routes = [
       {
         path: 'contest-list',
         component: ContestListComponent,
+      },
+      {
+        path: 'contest-detail/:contestId',
+        component: ContestDetailComponent,
       },
       {
         path: 'about',
