@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class GeneralSettingComponent implements OnInit {
   subtitle: string;
   breadCrumbItems!: Array<{}>;
-  userVersion: any;
+  userDetail: any;
   modalReference: any;
   notifier: NotifierService;
   newToken: any;
@@ -38,8 +38,8 @@ export class GeneralSettingComponent implements OnInit {
       { label: 'Settings', active: true }
     ];
 
-    this.userVersion = JSON.parse(this.Rest.getSessionStorage() || '');
-    if (this.userVersion == null) {
+    this.userDetail = JSON.parse(this.Rest.getSessionStorage() || '');
+    if (this.userDetail == null) {
       this.router.navigate(["login"]);
     } else {
       this.versionForm = this.formBuilder.group({
@@ -70,13 +70,13 @@ export class GeneralSettingComponent implements OnInit {
   }
 
   addData(data: any) {
-    this.Rest.post(`add-game-rules123`, {
+    this.Rest.post(`update-settings`, {
       'androidVersion': data?.androidVersion,
       'iosVersion': data?.iosVersion
-    }, this.userVersion.token).subscribe({
+    }, this.userDetail.token).subscribe({
       next: (res: any) => {
         if (res.status == 200) {
-          this.notifier.notify('success', 'Rules data added successfully.');
+          this.notifier.notify('success', res.msg);
           this.spinner.hide();
           this.modalReference.close();
         } else {
